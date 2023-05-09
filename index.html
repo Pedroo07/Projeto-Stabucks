@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <title>Projeto-Starbucks</title>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <img src="img/logo.png" alt="" class="logo">
+            <ul class="lista">
+                <li><a href="#" >Home</a></li>
+                <li><a href="#" >Menu</a></li>
+                <li><a href="#" >Whats's New</a></li>
+                <li><a href="#" >Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="circle"></div>
+    <main>
+        <div class="text"> 
+            <h1>
+                It's not just Coffee <br>It's <span class="span">Starbucks</span>
+            </h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint accusamus sit dicta voluptates. Iusto eius quasi nulla officiis perferendis mollitia hic possimus voluptatem distinctio, ab minus, voluptates ad cupiditate labore!</p>
+            <div class="div2">
+                <button class="botao">learn more</button>
+                <ul class="copos">
+                    <li><img src="img/thumb1.png" alt="copo-verde" onclick="slide('img/img1.png'); trocarCor('#00704A'); logo('img/logo.png')"></li>
+                    <li><img src="img/thumb2.png" alt="copo-rosa" onclick="slide('img/img2.png'); trocarCor('#e79edd'); logo('img/logo-rosa.png')" ></li>
+                    <li><img src="img/thumb3.png" alt="copo-roxo" onclick="slide('img/img3.png'); trocarCor('#e900f1')" ></li>
+                </ul>
+            </div>
+        </div>
+        
+        <ul class="redes">
+            <li><a href="#"><img src="img/facebook.png" alt=""></a></li>
+            <li><a href="#"><img src="img/instagram.png" alt=""></a></li>
+            <li><a href="#"><img src="img/twitter.png" alt=""></a></li>
+        </ul>
+        <img src="img/img1.png" alt="" class="copo">
+    </main>
+</body>
+<script>
+    function slide(anything){
+        document.querySelector('.copo').src = anything
+    }
+    function logo(anything){
+        document.querySelector('.logo').src = anything
+    }
+    function trocarCor(cor){
+        const circle = document.querySelector('.circle')
+        circle.style.background = cor;
+        const span = document.querySelector('.span')
+        span.style.color = cor;
+        const botao = document.querySelector('.botao')
+        botao.style.background = cor;
+        const navList = document.querySelector('.nav .lista')
+        const navListItems = navList.querySelectorAll('li')
+
+        navListItems.forEach(li => {
+            li.style.setProperty("--color", cor)
+    })}
+</script>
+</html>
